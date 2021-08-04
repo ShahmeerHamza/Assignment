@@ -56,75 +56,90 @@
 
 // Task 4
 
-function data() {
-  var name = document.getElementById('nameField').value;
-  var gender = document.getElementById('genderField').value;
-  // var adress = document.getElementById('adressField').value;
-  // var education = document.getElementById('educationField').value;
-  // var profession = document.getElementById('professionField').value;
-  function Plan(name, gender, adress, education, profession) {
-    this.name = name;
-    this.gender = gender;
-    // this.sleepy = adress;
-    // this.bashful = education;
-    // this.sneezy = profession;
+let citizenData = [];
+const addData = () => {
+  let citizenName = document.getElementById("nameField").value;
+  let gender = document.getElementById('male').value;
+  console.log(gender)
+//  let female = document.getElementById('female').value;
+//   let gender;
+  if (gender.checked) {
+    gender = 'male'
   }
-
-    
-  // document.write(name + '<br>');
-  // document.write(gender + '<br>');
-  // document.write(adress + '<br>');
-  // document.write(education + '<br>');
-  // document.write(profession + '<br>');
+  else {
+    gender = 'female'
+  }
+  let adress = document.getElementById('adressField').value;
+  let education = document.getElementById('educationField').value;
+  let arrOfEducation = [];
+  // for (var i = 0; i < education.lenght; i++) {
+  //   if (education[i].checked) {
+  //     arrOfEducation[i].push(education[i].value)
+  //   }
+  // } 
+  let profession = document.getElementById('professionField').value;
+  // let arrOfProfession = [];
+  // for (var i = 0; i < profession.lenght; i++) {
+  //   if (profession[i].checked) {
+  //     arrOfProfession[i].push(profession[i].value)
+  //   }
+  // } 
+ 
+  let userData = {
+    "name" : citizenName,
+    "gender" : gender,
+    "adress": adress,
+    "education" : education,
+    "profession" : profession
+  }
+  citizenData.push(userData);
+  console.log(citizenData);
 }
 
-// function changeColor(newColor) {
-//     var elem = document.getElementById('para').value;
-//     elem.style.color = newColor;
-//   }
+const citizens = () => {
+  let population = document.getElementById('population');
+  console.log(population);
+  population.innerHTML = `Population of town ${citizenData.length}`;
+}
 
 
-// Youtube video
 
-// https://www.youtube.com/watch?v=I_fVO_NzT2g
-// var form = document.getElementById('form');
-// form.addEventListner('submit', (event) =>{
-//   event.preventDefault();
-//   const request = new XMLHttpRequest();
-//   request.onload = function () {
-//     console.log(request.responseText);
-//   };
+
+
+
+
+// Practice
+
+// var form = document.getElementById("form");
+// function handleForm() { 
+//   addData();
+//   citizens();
+// };
+
+// function data () {
+  // addData();
+  // citizens();
+// };
+
+
+// let data = document.querySelector('.submit');
+// // let data = document.getElementById("submit");
+// data.addEventListener("click", function () {
+//   addData();
+//   citizens();
 // });
 
 
+// document.getElementById('submit').addEventListener("submit", (event) => {
+//     event.preventDefault()
+//     addData();
+//     citizens();
+//   }) 
 
 
-// youtube video
-
-// https://www.youtube.com/watch?v=S944-epyYuI
-
-// var form = document.getElementById('form')
-// form.addEventListner('submit',function(event){
+// let data = document.querySelector("s");
+// data.addEventListener("click", (event) => {
 //   event.preventDefault()
-//   var name = document.getElementById('nameField').nodeValue
-//   console.log(name)
-// })
-
-
-
-// let user = document.getElementById("username").value;
-// var gender = document.getElementById("gender").value
-// var age = document.getElementById("adress").value
-// var education = document.getElementById("education").value
-// var profession = document.getElementById("profession").value
-
-// console.log(user);
-// function Citizen(name, gender, adress, education, profession) {
-//     this.name = name;
-//     this.gender = gender;
-//     this.adress = adress;
-//     this.education = education;
-//     this.profession = profession;
-// }
-
- 
+//   addData();
+//   citizens();
+// }) 
